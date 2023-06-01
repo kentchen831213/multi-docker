@@ -19,13 +19,13 @@ after_success:
   - docker login --username "$DOCKER_ID" --password "$DOCKER_PASSWORD"
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker tag kent/multi-client:latest kent831213/dockerhub:kent/multi-client
-  - docker tag kent/multi-nginx:latest kent831213/dockerhub:kent/multi-nginx
-  - docker tag kent/multi-server:latest kent831213/dockerhub:kent/multi-server
-  - docker tag kent/multi-worker:latest kent831213/dockerhub:kent/multi-worker
+  - docker tag kent/multi-client:latest kent831213/dockerhub:client
+  - docker tag kent/multi-nginx:latest kent831213/dockerhub:nginx
+  - docker tag kent/multi-server:latest kent831213/dockerhub:server
+  - docker tag kent/multi-worker:latest kent831213/dockerhub:worker
 
 
-  - docker push kent831213/dockerhub:kent/multi-client
-  - docker push kent831213/dockerhub:kent/multi-nginx
-  - docker push kent831213/dockerhub:kent/multi-server
-  - docker push kent831213/dockerhub:kent/multi-worker
+  - docker push kent831213/dockerhub:client
+  - docker push kent831213/dockerhub:nginx
+  - docker push kent831213/dockerhub:server
+  - docker push kent831213/dockerhub:worker
