@@ -11,10 +11,10 @@ script:
   - docker run -e CI=true kent/react-test npm test
 
 after_success:
-  - docker build -t kent/multi-client ./client kent831213/dockerhub:kent/multi-client
-  - docker build -t kent/multi-nginx ./nginx kent831213/dockerhub:kent/multi-nginx
-  - docker build -t kent/multi-server ./server kent831213/dockerhub:kent/multi-server
-  - docker build -t kent/multi-worker ./worker kent831213/dockerhub:kent/multi-worker
+  - docker build -t kent/multi-client ./client 
+  - docker build -t kent/multi-nginx ./nginx 
+  - docker build -t kent/multi-server ./server 
+  - docker build -t kent/multi-worker ./worker 
   # Log in to the docker CLI
   - docker login --username "$DOCKER_ID" --password "$DOCKER_PASSWORD"
   # - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
